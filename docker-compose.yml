@@ -1,0 +1,16 @@
+# This is for dev environment, for server, please see the Azure folder.
+version: "3"
+
+
+services:
+    proxy:
+        image: awyl/3proxydns
+        restart: always
+        container_name: "3proxydns"
+        ports:
+            - "8888:8888"
+            - "7880:7880" # webproc for dnsmasq
+            - "7881:7881" # webproc for 3proxy
+        # volumes:
+        #     - ./3proxy.cfg:/etc/3proxy.cfg
+        #     - ./dnsmasq.conf:/etc/dnsmasq.conf
